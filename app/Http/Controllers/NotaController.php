@@ -441,7 +441,7 @@ class NotaController extends Controller
      */
     public function downloadReporte(Request $request)
     {
-        //
+        //dd($request);
         // Validando datos de entrada.
         $request_data = array(
             'grado_id'  => 'required',
@@ -651,6 +651,7 @@ class NotaController extends Controller
         return view('notas.reporte')
             ->with('grado', $grado)
             ->with('hoy', $hoy)
+            ->with('trimestre', $request->trimestre)
             ->with('materias', $materias)
             ->with('matriculas', $matriculas)
             ->with('notas', $notas_all)

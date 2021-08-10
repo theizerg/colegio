@@ -62,7 +62,33 @@
 
   <!-- Table row -->
   <div class="row">
-   <h4 class="ml-3">{{Auth::user()->nombre }} {{Auth::user()->apellido }}</h4>
+     <div class="col-sm-6">
+     <img src="{{ asset('images/logo/logo.png') }}" width="80" alt=""> <h7 style="color:#FF0000">Colegio presidente Kennedy Fe y Alegría</h7>
+   </div>
+   <div class="col-sm-4">
+     <ul>
+     <li>Profesor: {{Auth::user()->nombre }} {{Auth::user()->apellido }}</li>
+      <li>
+        Año: {{ $grado->anio->numero }}
+      </li>
+      <li>
+        Grado: {{ $grado->codigo }}
+      </li>
+      <li>
+        Tipo de reporte :
+        @if ( $tipo == 'A')
+          <b>Anual</b>
+        @else
+        <b>Trimestral</b>
+        <li>
+         Trimestre: {{ $trimestre }}
+        </li>
+        @endif
+      </li>
+   </ul>
+   </div>
+  
+
     <div class="col-xs-12 table-responsive">
       <table class="table table-bordered">
         <thead>
